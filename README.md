@@ -1,5 +1,5 @@
 <p align="center">
-  <img height="100" src="_extensions/tudelft/www/TUDelft_logo_rgb.png">
+  <img height="100" src="_extensions/tudelft/www/TUDelft_logo_white.png">
 </p>
 
 # TU Delft Format for Quarto
