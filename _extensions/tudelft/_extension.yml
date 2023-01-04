@@ -12,4 +12,5 @@ contributes:
           data-background-size: contain
           data-background-position: right
           data-background-color: "#4AA3D2"
+      slide-number: true
 

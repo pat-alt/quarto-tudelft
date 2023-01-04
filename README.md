@@ -1,20 +1,20 @@
-# <%= title %> Format
+# TU Delft Format
 
 ## Installing
 
 ```bash
-quarto use template <pataltn>/<%= filesafename %>
+quarto use template <pataltn>/<quarto-tudelft>
 ```
 
-This will install the extension and create an example qmd file that you can use as a starting place for your article.
-
+This will install the extension and create an example `.qmd` file that you can use as a starting place for your presentation.
+<!-- 
 ## Using
 
 *TODO*: Describe how to use your format.
 
 ## Format Options
 
-*TODO*: If your format has options that can be set via document metadata, describe them.
+*TODO*: If your format has options that can be set via document metadata, describe them. -->
 
 ## Example
 

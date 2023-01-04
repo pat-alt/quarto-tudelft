@@ -2,7 +2,8 @@
 title: My Presentation
 subtitle: Subtitle
 format:
-  tudelft-revealjs: default
+  tudelft-revealjs: 
+    footer: My cool footer
 author: Patrick Altmeyer
 date: last-modified
 ---
@@ -14,4 +15,6 @@ My awesome research ...
 ## More Information
 
 You can learn more about controlling the appearance of RevealJS output here: <https://quarto.org/docs/presentations/revealjs/>
+
+# New Section
 
