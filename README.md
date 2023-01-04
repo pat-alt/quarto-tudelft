@@ -3,7 +3,7 @@
 ## Installing
 
 ```bash
-quarto use template <pataltn>/<quarto-tudelft>
+quarto use template patalt/quarto-tudelft
 ```
 
 This will install the extension and create an example `.qmd` file that you can use as a starting place for your presentation.
