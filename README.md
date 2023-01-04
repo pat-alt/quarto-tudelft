@@ -1,6 +1,8 @@
-# TU Delft Format for Quarto
+<p align="center">
+  <img height="100" src="_extensions/tudelft/www/TUDelft_logo_rgb.png">
+</p>
 
-![](_extensions/tudelft/www/TUDelft_logo_rgb.png)
+# TU Delft Format for Quarto
 
 ## Installing
 
