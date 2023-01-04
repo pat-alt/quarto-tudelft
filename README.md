@@ -1,4 +1,6 @@
-# TU Delft Format
+![](_extensions/tudelft/www/TUDelft_logo_rgb.png)
+
+# TU Delft Format for Quarto
 
 ## Installing
 
