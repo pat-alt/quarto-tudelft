@@ -1,0 +1,15 @@
+title: TU Delft
+author: pat-alt
+version: 1.0.0
+quarto-required: ">=99.9.0"
+contributes:
+  formats:
+    revealjs:
+      theme: [default, custom.scss]
+      logo: ../www/TUDelft_logo_rgb.png
+      title-slide-attributes:
+          data-background-image: ../www/delft-library.png
+          data-background-size: contain
+          data-background-position: right
+          data-background-color: "#4AA3D2"
+

@@ -1,0 +1,17 @@
+---
+title: My Presentation
+subtitle: Subtitle
+format:
+  tudelft-revealjs: default
+author: Patrick Altmeyer
+date: last-modified
+---
+
+## Introduction
+
+My awesome research ...
+
+## More Information
+
+You can learn more about controlling the appearance of RevealJS output here: <https://quarto.org/docs/presentations/revealjs/>
+
