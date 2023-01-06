@@ -39,4 +39,5 @@ quarto update pat-alt/quarto-tudelft
 
 ## Example
 
-<iframe class="slide-deck" src="example.html"></iframe>
+Here is the source code for a minimal sample document: [template.qmd](template.qmd).
+
