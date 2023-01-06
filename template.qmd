@@ -24,8 +24,6 @@ draft: true
 
 ## 🥜 In a nutshell ... 
 
-> [...] we run experiments that simulate the application of recourse in practice using various state-of-the-art counterfac- tual generators and find that all of them induce substantial domain and model shifts.
-
-**ACKNOWLEDGEMENTS**: Views presented in this presentation are my own. I am not affiliated with either Quarto or Posit (RStudio).
+- Blah blah
 
 # New Section

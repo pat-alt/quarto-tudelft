@@ -26,18 +26,7 @@ I will likely continue to improve this template. Updates can be fetched as follo
 quarto update pat-alt/quarto-tudelft
 ```
 
+## Usage
 
-<!-- ## Using
-
-*TODO*: Describe how to use your format.
-
-## Format Options
-
-*TODO*: If your format has options that can be set via document metadata, describe them. 
-
--->
-
-## Example
-
-Here is the source code for a minimal sample document: [template.qmd](template.qmd).
+Usage is outlined in the template document: [template.qmd](template.qmd). You can find the rendered version here.
 
