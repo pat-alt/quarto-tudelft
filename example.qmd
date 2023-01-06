@@ -1,0 +1,31 @@
+---
+title: My Awesome Title
+subtitle: My Awesome Subtitle
+author: 
+  - name: "**Patrick Altmeyer**"
+    url: https://www.paltmeyer.com/
+    affiliation: Delft University of Technology
+  - name: Another Author
+    affiliation: Delft University of Technology
+date: today
+format: 
+  tudelft-revealjs:
+    footer: My Awesome Footer --- Patrick Altmeyer --- CC BY-NC
+    self-contained: true
+    smaller: true
+    scrollable: true
+    preview-links: auto
+    slide-number: true
+    transition: slide
+    background-transition: fade
+    fig-align: center
+draft: true
+---
+
+## 🥜 In a nutshell ... 
+
+> [...] we run experiments that simulate the application of recourse in practice using various state-of-the-art counterfac- tual generators and find that all of them induce substantial domain and model shifts.
+
+**ACKNOWLEDGEMENTS**: Views presented in this presentation are my own. I am not affiliated with either Quarto or Posit (RStudio).
+
+# New Section

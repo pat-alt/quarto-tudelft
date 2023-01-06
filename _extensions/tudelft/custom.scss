@@ -3,6 +3,18 @@
 // Fonts
 @import url(https://fonts.googleapis.com/css?family=Roboto+Slab:300,700);
 $font-family-sans-serif: "Roboto Slab", Regular Regular, serif !default;
+$title-font-size: 5vw !default;
+$title-font-weight: 500 !default;
+$subtitle-font-size: 3vw !default;
+$author-font-size: 1.5vw !default;
+
+// Images
+$img-title: url("https://raw.githubusercontent.com/pat-alt/quarto-tudelft/main/_extensions/tudelft/www/delft-transition.png");
+$img-transition: url("https://raw.githubusercontent.com/pat-alt/quarto-tudelft/main/_extensions/tudelft/www/delft-transition.png");
+$img-logo-rgb: url("https://raw.githubusercontent.com/pat-alt/quarto-tudelft/main/_extensions/tudelft/www/TUDelft_logo_rgb.png");
+$img-logo-white: url("https://raw.githubusercontent.com/pat-alt/quarto-tudelft/main/_extensions/tudelft/www/TUDelft_logo_white.png");
+$logo-pos: 5% 102% !default;
+$logo-size: 10% !default;
 
 // Colors
 $body-bg: #ffffff !default;
@@ -16,61 +28,19 @@ $light-bg-code-color: darken($code-color, 15%);
 
 /*-- scss:rules --*/
 
-.reveal {
-
-    .backgrounds {
-        z-index: -1;
-    }
-
+// DEFAULT
+.quarto-light {
+    background-image: $img-logo-rgb;
+    background-size: $logo-size;
+    background-repeat: no-repeat;
+    background-position: $logo-pos;
 }
 
-// Title slide:
-#title-slide {
-
-    .title, .subtitle {
-        color: #ffffff !important;
-        text-shadow: none;
-        font-weight: 600;
-        text-align: left;
-    }
-
-    .title {
-        font-size: 64px;
-    }
-
-    .subtitle {
-        font-size: 48px;
-    }
-
-    .institute, .quarto-title-author-name, .date {
-        color: #ffffff !important;
-        text-shadow: none;
-        font-weight: 400;
-        text-align: left;
-        padding-top: 50px;
-        font-size: 36px;
-    }
-
-    .quarto-title-authors {
-        display: flex;
-        justify-content: left;
-        .quarto-title-author {
-            padding-left: 0em;
-            padding-right: 0em;
-            width: 100%;
-        }
-    }
-
-}
-
-.slide-logo {
-    z-index: 25;
-    display: block !important;
-    top: 0% !important;
-    right: 2% !important;
-    max-height: 15% !important;
-    height: 100% !important;
-    width: auto !important;
+.quarto-dark {
+    background-image: $img-logo-white;
+    background-size: $logo-size;
+    background-repeat: no-repeat;
+    background-position: $logo-pos;
 }
 
 .reveal.has-logo .slide-number {
@@ -82,4 +52,56 @@ $light-bg-code-color: darken($code-color, 15%);
 
 .reveal .progress {
 	color: $code-color;
+}
+
+.reveal > .backgrounds {
+    z-index: -1;
+}
+
+// TITLE SLIDE 
+.reveal .slide-background.quarto-title-block {
+    background-color: $presentation-heading-color;
+    background-image: $img-title, $img-logo-white;
+    background-size: contain, $logo-size;
+    background-position: 100% 50%, $logo-pos;
+    background-repeat: no-repeat;
+}
+
+#title-slide {
+
+    .title, .subtitle, .institute, .quarto-title-authors, .date {
+        color: #ffffff !important;
+        text-shadow: none;
+        text-align: left;
+        max-width: 45%;
+    }
+
+    .title {
+        font-weight: $title-font-weight;
+        font-size: $title-font-size;
+    }
+
+    .subtitle {
+        font-style: italic;
+        font-size: $subtitle-font-size;
+    }
+
+    .quarto-title-authors {
+        font-size: $author-font-size;
+        display: block;
+    }
+
+}
+
+// TRANSITION SLIDES
+.reveal .slide-background.slide.level1 {
+    background-color: $presentation-heading-color;
+    background-image: $img-transition, $img-logo-white;
+    background-size: cover, $logo-size;
+    background-position: 50% 50%, $logo-pos;
+    background-repeat: no-repeat;
+} 
+
+.reveal .slide.level1 > h1 {
+    color: #ffffff;
 }
