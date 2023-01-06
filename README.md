@@ -35,6 +35,8 @@ quarto update pat-alt/quarto-tudelft
 
 *TODO*: If your format has options that can be set via document metadata, describe them. 
 
+-->
+
 ## Example
 
-Here is the source code for a minimal sample document: [example.qmd](example.qmd). -->
+<iframe class="slide-deck" src="example.html"></iframe>
