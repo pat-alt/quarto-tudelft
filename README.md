@@ -30,3 +30,7 @@ quarto update pat-alt/quarto-tudelft
 
 Usage is outlined in the template document: [template.qmd](template.qmd). You can find the rendered version here.
 
+## Copyright
+
+Copyright for all images belongs to TU Delft. 
+
