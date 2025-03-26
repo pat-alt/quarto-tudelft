@@ -1,0 +1,120 @@
+\newif\if@fourier
+\DeclareOption{fourier}{\@fouriertrue}
+\ProcessOptions\relax
+
+\RequirePackage{ifpdf}
+\RequirePackage{ifxetex}
+
+\ifxetex\else\RequirePackage[utf8]{inputenc}\fi
+\RequirePackage{siunitx}
+
+\if@fourier
+    %% The native font is Utopia Regular with Fourier math. We use Latin Modern
+    %% as a fallback, since Utopia lacks support for sans-serif and monospace.
+
+    \RequirePackage[T1]{fontenc}
+    \RequirePackage{lmodern}
+    \RequirePackage{fourier}
+
+    % upright partial derivative, because it is an operator, not a variable
+    \DeclareMathSymbol{\uppartial}{\mathord}{otherletters}{130}
+    \let\partial\uppartial
+
+    \RequirePackage[Symbolsmallscale]{upgreek}
+    
+    \DeclareSIPrefix{\micro}{%
+    \upmu%
+    }{-6}
+\else
+    \RequirePackage[LGR,T1]{fontenc}
+    \RequirePackage{arev}
+    \RequirePackage{roboto}
+    \RequirePackage[scaled=1.28]{couriers}
+
+    \def\addupgreek#1{%
+        \expandafter\def\csname up#1\endcsname%
+        {\text{{\robotolgr\csname text#1\endcsname}}}}
+    \addupgreek{alpha}
+    \addupgreek{beta}
+    \addupgreek{gamma}
+    \addupgreek{delta}
+    \addupgreek{epsilon}
+    \addupgreek{zeta}
+    \addupgreek{eta}
+    \addupgreek{theta}
+    \addupgreek{iota}
+    \addupgreek{kappa}
+    \addupgreek{lambda}
+    \addupgreek{mu}
+    \addupgreek{nu}
+    \addupgreek{xi}
+    \addupgreek{omicron}
+    \addupgreek{pi}
+    \addupgreek{rho}
+    \addupgreek{sigma}
+    \addupgreek{tau}
+    \addupgreek{upsilon}
+    \addupgreek{phi}
+    \addupgreek{chi}
+    \addupgreek{psi}
+    \addupgreek{omega}
+
+    \def\addvarGreek#1{%
+        \expandafter\def\csname var#1\endcsname%
+        {\text{{\robotolgr\itshape\csname text#1\endcsname}}}}
+
+    \addvarGreek{Alpha}
+    \addvarGreek{Beta}
+    \addvarGreek{Gamma}
+    \addvarGreek{Delta}
+    \addvarGreek{Epsilon}
+    \addvarGreek{Zeta}
+    \addvarGreek{Eta}
+    \addvarGreek{Theta}
+    \addvarGreek{Iota}
+    \addvarGreek{Kappa}
+    \addvarGreek{Lambda}
+    \addvarGreek{Mu}
+    \addvarGreek{Nu}
+    \addvarGreek{Xi}
+    \addvarGreek{Omicron}
+    \addvarGreek{Pi}
+    \addvarGreek{Rho}
+    \addvarGreek{Sigma}
+    \addvarGreek{Tau}
+    \addvarGreek{Upsilon}
+    \addvarGreek{Phi}
+    \addvarGreek{Chi}
+    \addvarGreek{Psi}
+    \addvarGreek{Omega}
+
+    \DeclareSIPrefix{\micro}{%
+    \text{\roboto\textmu}%
+    }{-6}
+    \DeclareSIUnit{\ohm}{\ensuremath{\Omega}}
+    % since the fonts in math and text are almost the same, this will probably look best in most cases
+    \sisetup{detect-all,mode=text}
+
+    \ifxetex
+        \IfFontExistsTF{Arial}{
+            \setmainfont{Arial}
+        }{
+            \setmainfont[ Numbers = {\roboto@figurealign,\roboto@figurestyle},
+                UprightFont    = *-\roboto@regstyle ,
+                ItalicFont     = *-\ifx\roboto@regstyle\roboto@regular Italic\else\roboto@regstyle Italic\fi,
+                BoldFont       = *-\roboto@boldstyle ,
+                BoldItalicFont = *-\roboto@boldstyle Italic ,
+                Extension = .otf,
+            ]{Roboto}
+        }
+        \setmonofont[Scale=1.14]{Courier}
+        \defaultfontfeatures{Ligatures=TeX}
+    \fi
+\fi
+
+% add a font for bold sans-serif italics in math
+\DeclareMathAlphabet{\mathbfsf}{\encodingdefault}{\sfdefault}{bx}{sl}
+
+\RequirePackage{mathtools} % improved version of amsmath
+\RequirePackage{amssymb}
+\RequirePackage{bm}

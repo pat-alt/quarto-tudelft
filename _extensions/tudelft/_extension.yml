@@ -8,5 +8,12 @@ contributes:
       theme: [default, custom.scss]
       slide-number: true
       date-format: long
-    pdf: default
+    pdf:
+      format-resources:
+        - tudelft.cls
+        - fonts-tudelft.sty
+        - thumbindices.sty
+        - color-tudelft.sty
+      template-partials:
+        - partials/doc-class.tex
 

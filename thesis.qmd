@@ -1,0 +1,21 @@
+---
+title: TU Delft PhD Thesis Template
+format:
+  tudelft-pdf:
+    keep-tex: true  
+author:
+  - name: Patrick Altmeyer
+    affiliations:
+      - name: Delft University of Technology
+        department: EEMCS
+        id: 1
+    email: p.altmeyer@tudelft.nl
+    url: https://www.patalt.org/
+  - name: Andrew Demetriou
+    affiliations:
+      - ref: 1
+abstract: |
+  This document is a template demonstrating the `thesis-tudelft` format.
+keywords: [template, demo]
+bibliography: bibliography.bib  
+---
