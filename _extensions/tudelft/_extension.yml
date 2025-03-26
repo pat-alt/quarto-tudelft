@@ -8,4 +8,5 @@ contributes:
       theme: [default, custom.scss]
       slide-number: true
       date-format: long
+    pdf: default
 
