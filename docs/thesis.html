@@ -35,7 +35,20 @@ ul.task-list li input[type="checkbox"] {
 <link href="thesis_files/libs/quarto-html/quarto-syntax-highlighting-3aa970819e70fbc78806154e5a1fcd28.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="thesis_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="thesis_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="thesis_files/libs/bootstrap/bootstrap-33178778e6536bed0491795ee93e3fbb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="thesis_files/libs/bootstrap/bootstrap-6981ed24de88823af5b8b0247a129601.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="thesis_files/libs/quarto-contrib/pseudocode-2.4.1/pseudocode.min.js"></script>
+<link href="thesis_files/libs/quarto-contrib/pseudocode-2.4.1/pseudocode.min.css" rel="stylesheet">
+<link href="thesis_files/libs/quarto-contrib/foldbox/foldbox.css" rel="stylesheet">
+<style>
+.TRQ {
+  --color1: #adebad;
+  --color2: #2eb82e;
+}
+.RQ {
+  --color1: #ebfaeb;
+  --color2: #2eb82e;
+}
+</style>
 <style>
 div.callout-tip.callout {
   border-left-color: green;
@@ -45,8 +58,7 @@ div.callout-tip.callout-style-default > .callout-header {
 }
 div.callout-tip .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-tip.callout-style-default .callout-icon::before, div.callout-tip.callout-titled .callout-icon::before {
-  content: '❓';
-  background-image: none;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 </style>
 
@@ -112,9 +124,30 @@ div.callout-tip.callout-style-default .callout-icon::before, div.callout-tip.cal
 <h1>Cool Quarto Things</h1>
 <section id="custom-callouts" class="level2">
 <h2 class="anchored" data-anchor-id="custom-callouts">Custom Callouts</h2>
-<p>The template adds custom cross-references that can be combined with standard callout blocks like <a href="#nte-custom" class="quarto-xref">Note&nbsp;1</a>.</p>
+<p>The template adds custom numbered blocks and custom cross-references that can be combined with standard callout blocks like <a href="#nte-custom" class="quarto-xref">Note&nbsp;1</a>.</p>
 <!-- TODO: Adapt when possible -->
 <!-- BUG: Showing wrong prefix in title for HTML -->
+<section id="custom-numbered-blocks" class="level3">
+<h3 class="anchored" data-anchor-id="custom-numbered-blocks">Custom Numbered Blocks</h3>
+<p>The recommended approach is to rely on the embedded <a href="https://github.com/ute/custom-numbered-blocks">ute/custom-numbered-blocks</a> extension, which supports HTML and PDF with non-standard cross-references (i.e.&nbsp;<code>\ref{}</code> syntax). We provide two custom numbered blocks:</p>
+<p>We provide two custom numbered blocks:</p>
+<ol type="1">
+<li><strong>TRQ</strong> for Thesis Research Questions</li>
+<li><strong>RQ</strong> for Research Questions</li>
+</ol>
+<p>TRQ <a href="#trq:what">2.1</a> is an example of the former; RQ <a href="#rq:what">2.2</a> is an example of the latter.</p>
+<div id="trq:what" class="TRQ" title="What is a TRQ?">
+<p></p><details class="TRQ fbx-simplebox fbx-default" open=""><summary><strong>❔ TRQ 2.1: </strong>What is a TRQ?</summary><div>This is a Thesis Research Question, that you might want to use in the introduction of your thesis.<p></p>
+</div></details>
+</div>
+<div id="rq:what" class="RQ" title="What is a RQ?">
+<p></p><details class="RQ fbx-simplebox fbx-default" open=""><summary><strong>RQ 2.2: </strong>What is a RQ?</summary><div>This is a Research Question, that you might want to use in any chapter of your thesis.<p></p>
+</div></details>
+</div>
+</section>
+<section id="callouts-with-custom-cross-references" class="level3">
+<h3 class="anchored" data-anchor-id="callouts-with-custom-cross-references">Callouts with Custom Cross-References</h3>
+<p>Alternatively, you can rely on standard callout blocks combined with custom cross-references. This approach has certain limitations (<a href="#nte-custom" class="quarto-xref">Note&nbsp;1</a>), but may be preferable if you like the default callouts.</p>
 <div id="nte-custom" class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -125,8 +158,7 @@ Note&nbsp;1: Current Limitations
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This is a makeshift solution that relies on setting the default behaviour of callout blocks to <code>callout-appearance: simple</code>. We rely on the default style of callout blocks, e.g.&nbsp;the <code>.callout-tip</code> for questions, where the light bulb icon sort of makes sense.</p>
-<p>Ideally, we would like to have either custom callout blocks or custom theorem environments. There is <a href="https://quarto.thecoatlessprofessor.com/custom-callout/qcustom-callout-faq.html">coatless-quarto/custom-callouts</a>, which unfortunately does not support PDF, and <a href="https://github.com/ute/custom-numbered-blocks">ute/custom-numbered-blocks</a>, which I could not get to work in combination with custom cross-references. For custom cross-references, Quarto currently only supports float environments, so no custom theorem environments are supported yet.</p>
+<p>This is a makeshift solution surprisingly works, but it has certain limitations. Firstly, it relies on setting the default behaviour of callout blocks to <code>callout-appearance: simple</code> (to override this, just use the YAML header of you document or the <code>_quarto.yml</code> config file). We rely on the default style of callout blocks, e.g.&nbsp;the <code>.callout-tip</code> for questions, where the light bulb icon sort of makes sense. Secondly, it works well for PDF, in that the title in the callout block is changed to TRQ/RQ, but not for HTML. We use <a href="https://quarto.thecoatlessprofessor.com/custom-callout/qcustom-callout-faq.html">coatless-quarto/custom-callouts</a> to add a custom icon in HTML, but unfortunately we have not been able to affect the title.</p>
 </div>
 </div>
 <p><a href="#trq-what" class="quarto-xref">TRQ&nbsp;1</a> is a Thesis Research Question.</p>
@@ -157,6 +189,7 @@ Tip&nbsp;1: What are Research Questions?
 <p>This is a standard Research Question, that you might want to use in any individual chapter. It can be cross-referenced using the custom <code>rq</code> key.</p>
 </div>
 </div>
+</section>
 </section>
 </section>
 
@@ -562,6 +595,38 @@ Tip&nbsp;1: What are Research Questions?
   });
   </script>
 </div> <!-- /content -->
+    <script type="text/javascript">
+    (function(d) {
+      d.querySelectorAll(".pseudocode-container").forEach(function(el) {
+        let pseudocodeOptions = {
+          indentSize: el.dataset.indentSize || "1.2em",
+          commentDelimiter: el.dataset.commentDelimiter || "//",
+          lineNumber: el.dataset.lineNumber === "true" ? true : false,
+          lineNumberPunc: el.dataset.lineNumberPunc || ":",
+          noEnd: el.dataset.noEnd === "true" ? true : false,
+          titlePrefix: el.dataset.captionPrefix || "Algorithm"
+        };
+        pseudocode.renderElement(el.querySelector(".pseudocode"), pseudocodeOptions);
+      });
+    })(document);
+    (function(d) {
+      d.querySelectorAll(".pseudocode-container").forEach(function(el) {
+        let captionSpan = el.querySelector(".ps-root > .ps-algorithm > .ps-line > .ps-keyword")
+        if (captionSpan !== null) {
+          let captionPrefix = el.dataset.captionPrefix + " ";
+          let captionNumber = "";
+          if (el.dataset.pseudocodeNumber) {
+            captionNumber = el.dataset.pseudocodeNumber + " ";
+            if (el.dataset.chapterLevel) {
+              captionNumber = el.dataset.chapterLevel + "." + captionNumber;
+            }
+          }
+          captionSpan.innerHTML = captionPrefix + captionNumber;
+        }
+      });
+    })(document);
+    </script>
+  
 
 
 

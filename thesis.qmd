@@ -26,18 +26,47 @@ This is a Quarto extension for generating your TU Delft PhD Thesis in Quarto.
 
 ## Custom Callouts 
 
-The template adds custom cross-references that can be combined with standard callout blocks like @nte-custom. 
+The template adds custom numbered blocks and custom cross-references that can be combined with standard callout blocks like @nte-custom. 
 
 <!-- TODO: Adapt when possible -->
 <!-- BUG: Showing wrong prefix in title for HTML -->
+
+### Custom Numbered Blocks
+
+The recommended approach is to rely on the embedded [ute/custom-numbered-blocks](https://github.com/ute/custom-numbered-blocks) extension, which supports HTML and PDF with non-standard cross-references (i.e. `\ref{}` syntax). We provide two custom numbered blocks:
+
+We provide two custom numbered blocks:
+
+1. **TRQ** for Thesis Research Questions
+2. **RQ** for Research Questions
+
+TRQ \ref{trq:what} is an example of the former; RQ \ref{rq:what} is an example of the latter. 
+
+::: {.TRQ #trq:what}
+
+## What is a TRQ?
+
+This is a Thesis Research Question, that you might want to use in the introduction of your thesis.
+
+:::
+
+::: {.RQ #rq:what}
+
+## What is a RQ?
+
+This is a Research Question, that you might want to use in any chapter of your thesis.
+
+:::
+
+### Callouts with Custom Cross-References
+
+Alternatively, you can rely on standard callout blocks combined with custom cross-references. This approach has certain limitations (@nte-custom), but may be preferable if you like the default callouts.
 
 ::: {#nte-custom .callout-note}
 
 ## Current Limitations
 
-This is a makeshift solution that relies on setting the default behaviour of callout blocks to `callout-appearance: simple`. We rely on the default style of callout blocks, e.g. the `.callout-tip` for questions, where the light bulb icon sort of makes sense.
-
-Ideally, we would like to have either custom callout blocks or custom theorem environments. There is [coatless-quarto/custom-callouts](https://quarto.thecoatlessprofessor.com/custom-callout/qcustom-callout-faq.html), which unfortunately does not support PDF, and [ute/custom-numbered-blocks](https://github.com/ute/custom-numbered-blocks), which I could not get to work in combination with custom cross-references. For custom cross-references, Quarto currently only supports float environments, so no custom theorem environments are supported yet.
+This is a makeshift solution surprisingly works, but it has certain limitations. Firstly, it relies on setting the default behaviour of callout blocks to `callout-appearance: simple` (to override this, just use the YAML header of you document or the `_quarto.yml` config file). We rely on the default style of callout blocks, e.g. the `.callout-tip` for questions, where the light bulb icon sort of makes sense. Secondly, it works well for PDF, in that the title in the callout block is changed to TRQ/RQ, but not for HTML. We use [coatless-quarto/custom-callouts](https://quarto.thecoatlessprofessor.com/custom-callout/qcustom-callout-faq.html) to add a custom icon in HTML, but unfortunately we have not been able to affect the title.
 
 :::
 
@@ -60,3 +89,5 @@ This is a Thesis Research Question, that you might want to use in the introducti
 This is a standard Research Question, that you might want to use in any individual chapter. It can be cross-referenced using the custom `rq` key.  
 
 :::
+
+

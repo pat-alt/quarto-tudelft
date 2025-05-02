@@ -6,26 +6,43 @@ contributes:
   formats:
     common:
       callout-appearance: simple
-      callout-tip-title: "Question"
+      filters:
+        - pseudocode
+        - custom-numbered-blocks
       crossref:
-          custom:
-            - key: trq
-              kind: float
-              reference-prefix: Thesis Research Question
-              latex-env: trqthm
-              caption-prefix: TRQ
-            - key: rq
-              kind: float
-              reference-prefix: Research Question
-              latex-env: rq
-              caption-prefix: RQ
+        custom:
+          - key: trq
+            kind: float
+            reference-prefix: TRQ 
+            latex-env: trqthm
+            caption-prefix: TRQ
+            caption-location: margin
+          - key: rq
+            kind: float
+            reference-prefix: Research Question
+            latex-env: rq
+            caption-prefix: RQ
+      custom-numbered-blocks:
+        groups:
+          question:
+            collapse: false
+            boxstyle: foldbox.simple
+        classes:
+          TRQ: 
+            group: question
+            label: "❔ TRQ"
+            colors: [adebad, 2eb82e]
+          RQ: 
+            group: question
+            label: "RQ"
+            colors: [ebfaeb, 2eb82e]
     html:
       theme: [default, custom.scss]
       filters:
         - custom-callout
       custom-callout:
         tip:
-          icon-symbol: "❓"
+          icon: false
           color: "green"
     revealjs:
       theme: [default, custom.scss, reveal.scss]
