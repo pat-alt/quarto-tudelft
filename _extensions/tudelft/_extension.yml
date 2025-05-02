@@ -26,6 +26,7 @@ contributes:
       theme: [default, custom.scss, reveal.scss]
       slide-number: true
       date-format: long
+    epub: default
     pdf:
       format-resources:
         - tudelft.cls
