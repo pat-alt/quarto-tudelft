@@ -23,7 +23,7 @@ contributes:
     html:
       theme: [default, custom.scss]
     revealjs:
-      theme: [default, custom.scss]
+      theme: [default, custom.scss, reveal.scss]
       slide-number: true
       date-format: long
     pdf:

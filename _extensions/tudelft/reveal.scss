@@ -1,0 +1,77 @@
+/*-- scss:rules --*/
+.quarto-light {
+    background-image: $img-logo-rgb;
+    background-size: $logo-size;
+    background-repeat: no-repeat;
+    background-position: $logo-pos;
+}
+
+.quarto-dark {
+    background-image: $img-logo-white;
+    background-size: $logo-size;
+    background-repeat: no-repeat;
+    background-position: $logo-pos;
+}
+
+.reveal.has-logo .slide-number {
+    bottom: 10px !important;
+    right: 10px !important;
+    top: unset !important;
+    color: $body-color !important;
+}
+
+.reveal .progress {
+	color: $code-color;
+}
+
+.reveal > .backgrounds {
+    z-index: -1;
+}
+
+// TITLE SLIDE 
+.reveal .slide-background.quarto-title-block {
+    background-color: $presentation-heading-color;
+    background-image: $img-title, $img-logo-white;
+    background-size: contain, $logo-size;
+    background-position: 100% 50%, $logo-pos;
+    background-repeat: no-repeat;
+}
+
+#title-slide {
+
+    .title, .subtitle, .institute, .quarto-title-authors, .date {
+        color: #ffffff !important;
+        text-shadow: none;
+        text-align: left;
+        max-width: 45%;
+    }
+
+    .title {
+        font-weight: $title-font-weight;
+        font-size: $title-font-size;
+    }
+
+    .subtitle {
+        font-style: italic;
+        font-size: $subtitle-font-size;
+    }
+
+    .quarto-title-authors {
+        font-size: $author-font-size;
+        display: block;
+    }
+
+}
+
+// TRANSITION SLIDES
+.reveal .slide-background.slide.level1 {
+    background-color: $presentation-heading-color;
+    background-image: $img-transition, $img-logo-white;
+    background-size: cover, $logo-size;
+    background-position: 50% 50%, $logo-pos;
+    background-repeat: no-repeat;
+} 
+
+.reveal .slide.level1 > h1 {
+    color: #ffffff;
+}
