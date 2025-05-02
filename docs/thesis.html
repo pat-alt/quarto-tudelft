@@ -36,6 +36,19 @@ ul.task-list li input[type="checkbox"] {
 <script src="thesis_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="thesis_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="thesis_files/libs/bootstrap/bootstrap-33178778e6536bed0491795ee93e3fbb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<style>
+div.callout-tip.callout {
+  border-left-color: green;
+}
+div.callout-tip.callout-style-default > .callout-header {
+  background-color: rgb(from green r g b / 13%);
+}
+div.callout-tip .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-tip.callout-style-default .callout-icon::before, div.callout-tip.callout-titled .callout-icon::before {
+  content: '❓';
+  background-image: none;
+}
+</style>
 
 
 </head>
@@ -101,6 +114,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="custom-callouts">Custom Callouts</h2>
 <p>The template adds custom cross-references that can be combined with standard callout blocks like <a href="#nte-custom" class="quarto-xref">Note&nbsp;1</a>.</p>
 <!-- TODO: Adapt when possible -->
+<!-- BUG: Showing wrong prefix in title for HTML -->
 <div id="nte-custom" class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">

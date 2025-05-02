@@ -6,6 +6,7 @@ contributes:
   formats:
     common:
       callout-appearance: simple
+      callout-tip-title: "Question"
       crossref:
           custom:
             - key: trq
@@ -13,15 +14,19 @@ contributes:
               reference-prefix: Thesis Research Question
               latex-env: trqthm
               caption-prefix: TRQ
-              caption-location: bottom
             - key: rq
               kind: float
               reference-prefix: Research Question
               latex-env: rq
               caption-prefix: RQ
-              caption-location: bottom
     html:
       theme: [default, custom.scss]
+      filters:
+        - custom-callout
+      custom-callout:
+        tip:
+          icon-symbol: "❓"
+          color: "green"
     revealjs:
       theme: [default, custom.scss, reveal.scss]
       slide-number: true
