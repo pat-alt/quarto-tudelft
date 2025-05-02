@@ -20,6 +20,8 @@ contributes:
               latex-env: rq
               caption-prefix: RQ
               caption-location: bottom
+    html:
+      theme: [default, custom.scss]
     revealjs:
       theme: [default, custom.scss]
       slide-number: true

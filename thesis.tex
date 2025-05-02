@@ -174,6 +174,8 @@
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
+\newcounter{quartocalloutnteno}
+\newcommand{\quartocalloutnte}[1]{\refstepcounter{quartocalloutnteno}\label{#1}}
 \newcounter{quartocallouttrqno}
 \newcommand{\quartocallouttrq}[1]{\refstepcounter{quartocallouttrqno}\label{#1}}
 \newcounter{quartocalloutrqno}
@@ -213,29 +215,41 @@ Quarto.
 
 \subsection{Custom Callouts}\label{custom-callouts}
 
-The template adds custom callout blocks using the embedded
-\texttt{coatless-quarto/custom-callout} extension.
+The template adds custom cross-references that can be combined with
+standard callout blocks like Note~\ref{nte-custom}.
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, rightrule=.15mm, toprule=.15mm, arc=.35mm, colback=white, bottomrule=.15mm, breakable, colframe=quarto-callout-note-color-frame, leftrule=.75mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colback=white, toprule=.15mm, breakable, opacityback=0, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, arc=.35mm, rightrule=.15mm, leftrule=.75mm, left=2mm]
 \begin{minipage}[t]{5.5mm}
 \textcolor{quarto-callout-note-color}{\faInfo}
 \end{minipage}%
 \begin{minipage}[t]{\textwidth - 5.5mm}
 
-\subsection{Custom Theorem
-Environments}\label{custom-theorem-environments}
+\quartocalloutnte{nte-custom} 
 
-Ideally, we would like to have support for custom theorem environments
-through custom cross-references. For custom cross-references, Quarto
-currently only supports float environments, so no custom theorem
-environments are supported yet.
+\vspace{-3mm}\textbf{Note \ref*{nte-custom}: Current Limitations}\vspace{3mm}
+
+This is a makeshift solution that relies on setting the default
+behaviour of callout blocks to \texttt{callout-appearance:\ simple}. We
+rely on the default style of callout blocks, e.g.~the
+\texttt{.callout-tip} for questions, where the light bulb icon sort of
+makes sense.
+
+Ideally, we would like to have either custom callout blocks or custom
+theorem environments. There is
+\href{https://quarto.thecoatlessprofessor.com/custom-callout/qcustom-callout-faq.html}{coatless-quarto/custom-callouts},
+which unfortunately does not support PDF, and
+\href{https://github.com/ute/custom-numbered-blocks}{ute/custom-numbered-blocks},
+which I could not get to work in combination with custom
+cross-references. For custom cross-references, Quarto currently only
+supports float environments, so no custom theorem environments are
+supported yet.
 
 \end{minipage}%
 \end{tcolorbox}
 
 TRQ~\ref{trq-what} is a Thesis Research Question.
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, rightrule=.15mm, toprule=.15mm, arc=.35mm, colback=white, bottomrule=.15mm, breakable, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colback=white, toprule=.15mm, breakable, opacityback=0, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, arc=.35mm, rightrule=.15mm, leftrule=.75mm, left=2mm]
 \begin{minipage}[t]{5.5mm}
 \textcolor{quarto-callout-tip-color}{\faLightbulb}
 \end{minipage}%
@@ -243,17 +257,18 @@ TRQ~\ref{trq-what} is a Thesis Research Question.
 
 \quartocallouttrq{trq-what} 
 
-\vspace{-3mm}\textbf{TRQ \ref*{trq-what}: What?}\vspace{3mm}
+\vspace{-3mm}\textbf{TRQ \ref*{trq-what}: What are Thesis Research Questions?}\vspace{3mm}
 
-This is a Thesis Research Question. It can be cross-referenced using the
-custom \texttt{trq} key.
+This is a Thesis Research Question, that you might want to use in the
+introduction of your thesis. It can be cross-referenced using the custom
+\texttt{trq} key.
 
 \end{minipage}%
 \end{tcolorbox}
 
 RQ~\ref{rq-what} is a standard Research Question.
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, rightrule=.15mm, toprule=.15mm, arc=.35mm, colback=white, bottomrule=.15mm, breakable, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, opacityback=0]
+\begin{tcolorbox}[enhanced jigsaw, colback=white, toprule=.15mm, breakable, opacityback=0, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, arc=.35mm, rightrule=.15mm, leftrule=.75mm, left=2mm]
 \begin{minipage}[t]{5.5mm}
 \textcolor{quarto-callout-tip-color}{\faLightbulb}
 \end{minipage}%
@@ -261,10 +276,11 @@ RQ~\ref{rq-what} is a standard Research Question.
 
 \quartocalloutrq{rq-what} 
 
-\vspace{-3mm}\textbf{RQ \ref*{rq-what} }\vspace{3mm}
+\vspace{-3mm}\textbf{RQ \ref*{rq-what}: What are Research Questions?}\vspace{3mm}
 
-This is a standard Research Question. It can be cross-referenced using
-the custom \texttt{rq} key.
+This is a standard Research Question, that you might want to use in any
+individual chapter. It can be cross-referenced using the custom
+\texttt{rq} key.
 
 \end{minipage}%
 \end{tcolorbox}

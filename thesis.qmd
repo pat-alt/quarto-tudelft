@@ -2,7 +2,8 @@
 title: TU Delft PhD Thesis Template
 format:
   tudelft-pdf:
-    keep-tex: true 
+    keep-tex: true
+  tudelft-html: default
 author:
   - name: Patrick Altmeyer
     affiliations:
