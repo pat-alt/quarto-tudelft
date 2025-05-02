@@ -2,7 +2,7 @@
 title: TU Delft PhD Thesis Template
 format:
   tudelft-pdf:
-    keep-tex: true  
+    keep-tex: true 
 author:
   - name: Patrick Altmeyer
     affiliations:
@@ -14,7 +14,7 @@ author:
 abstract: |
   This document is a template demonstrating the `thesis-tudelft` format.
 keywords: [template, demo]
-bibliography: bibliography.bib  
+bibliography: bibliography.bib     
 ---
 
 # Introduction
@@ -23,24 +23,38 @@ This is a Quarto extension for generating your TU Delft PhD Thesis in Quarto.
 
 # Cool Quarto Things
 
-## Custom Theorem Environments
+## Custom Callouts 
 
-The template adds custom cross-references.
-
-::: {.callout-warning}
+The template adds custom cross-references that can be combined with standard callout blocks like @nte-custom. 
 
 <!-- TODO: Adapt when possible -->
 
-## Currently a Float 
+::: {#nte-custom .callout-note}
 
-For custom references, Quarto currently only supports float environments, so no custom theorem environments are supported yet.
+## Current Limitations
+
+This is a makeshift solution that relies on setting the default behaviour of callout blocks to `callout-appearance: simple`. We rely on the default style of callout blocks, e.g. the `.callout-tip` for questions, where the light bulb icon sort of makes sense.
+
+Ideally, we would like to have either custom callout blocks or custom theorem environments. There is [coatless-quarto/custom-callouts](https://quarto.thecoatlessprofessor.com/custom-callout/qcustom-callout-faq.html), which unfortunately does not support PDF, and [ute/custom-numbered-blocks](https://github.com/ute/custom-numbered-blocks), which I could not get to work in combination with custom cross-references. For custom cross-references, Quarto currently only supports float environments, so no custom theorem environments are supported yet.
 
 :::
 
 @trq-what is a Thesis Research Question.
 
-::: {#trq-what}
+::: {.callout-tip #trq-what}
 
-This is a Thesis Research Question. It can be cross-referenced using the custom `trq` key. 
+## What are Thesis Research Questions?
+
+This is a Thesis Research Question, that you might want to use in the introduction of your thesis. It can be cross-referenced using the custom `trq` key. 
+
+:::
+
+@rq-what is a standard Research Question.
+
+::: {.callout-tip #rq-what}
+
+## What are Research Questions?
+
+This is a standard Research Question, that you might want to use in any individual chapter. It can be cross-referenced using the custom `rq` key.  
 
 :::

@@ -111,6 +111,13 @@
 \newcommand*\listoftrqthms{\listof{trqthm}{List of Thesis Research Questions}}
 \makeatother
 \makeatletter
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{plain}
+\@ifundefined{c@chapter}{\newfloat{rq}{h}{lorq}}{\newfloat{rq}{h}{lorq}[chapter]}
+\floatname{rq}{RQ}
+\newcommand*\listofrqs{\listof{rq}{List of Research Questions}}
+\makeatother
+\makeatletter
 \@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
 \@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
 \definecolor{quarto-callout-color}{HTML}{909090}
@@ -167,6 +174,10 @@
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
+\newcounter{quartocallouttrqno}
+\newcommand{\quartocallouttrq}[1]{\refstepcounter{quartocallouttrqno}\label{#1}}
+\newcounter{quartocalloutrqno}
+\newcommand{\quartocalloutrq}[1]{\refstepcounter{quartocalloutrqno}\label{#1}}
 \usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
@@ -200,34 +211,63 @@ Quarto.
 
 \section{Cool Quarto Things}\label{cool-quarto-things}
 
+\subsection{Custom Callouts}\label{custom-callouts}
+
+The template adds custom callout blocks using the embedded
+\texttt{coatless-quarto/custom-callout} extension.
+
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, rightrule=.15mm, toprule=.15mm, arc=.35mm, colback=white, bottomrule=.15mm, breakable, colframe=quarto-callout-note-color-frame, leftrule=.75mm, opacityback=0]
+\begin{minipage}[t]{5.5mm}
+\textcolor{quarto-callout-note-color}{\faInfo}
+\end{minipage}%
+\begin{minipage}[t]{\textwidth - 5.5mm}
+
 \subsection{Custom Theorem
 Environments}\label{custom-theorem-environments}
 
-The template adds custom cross-references.
+Ideally, we would like to have support for custom theorem environments
+through custom cross-references. For custom cross-references, Quarto
+currently only supports float environments, so no custom theorem
+environments are supported yet.
 
-\begin{tcolorbox}[enhanced jigsaw, bottomtitle=1mm, leftrule=.75mm, colframe=quarto-callout-warning-color-frame, colbacktitle=quarto-callout-warning-color!10!white, opacitybacktitle=0.6, colback=white, coltitle=black, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, opacityback=0, toptitle=1mm, rightrule=.15mm, titlerule=0mm, arc=.35mm, breakable, bottomrule=.15mm, toprule=.15mm, left=2mm]
-
-\subsection{Currently a Float}\label{currently-a-float}
-
-For custom references, Quarto currently only supports float
-environments, so no custom theorem environments are supported yet.
-
+\end{minipage}%
 \end{tcolorbox}
 
 TRQ~\ref{trq-what} is a Thesis Research Question.
 
-\begin{trqthm}
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, rightrule=.15mm, toprule=.15mm, arc=.35mm, colback=white, bottomrule=.15mm, breakable, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, opacityback=0]
+\begin{minipage}[t]{5.5mm}
+\textcolor{quarto-callout-tip-color}{\faLightbulb}
+\end{minipage}%
+\begin{minipage}[t]{\textwidth - 5.5mm}
 
-\centering{
+\quartocallouttrq{trq-what} 
+
+\vspace{-3mm}\textbf{TRQ \ref*{trq-what}: What?}\vspace{3mm}
 
 This is a Thesis Research Question. It can be cross-referenced using the
 custom \texttt{trq} key.
 
-}
+\end{minipage}%
+\end{tcolorbox}
 
-\caption{\label{trq-what}}
+RQ~\ref{rq-what} is a standard Research Question.
 
-\end{trqthm}%
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, rightrule=.15mm, toprule=.15mm, arc=.35mm, colback=white, bottomrule=.15mm, breakable, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, opacityback=0]
+\begin{minipage}[t]{5.5mm}
+\textcolor{quarto-callout-tip-color}{\faLightbulb}
+\end{minipage}%
+\begin{minipage}[t]{\textwidth - 5.5mm}
+
+\quartocalloutrq{rq-what} 
+
+\vspace{-3mm}\textbf{RQ \ref*{rq-what} }\vspace{3mm}
+
+This is a standard Research Question. It can be cross-referenced using
+the custom \texttt{rq} key.
+
+\end{minipage}%
+\end{tcolorbox}
 
 
 
