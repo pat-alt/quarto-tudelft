@@ -1,26 +1,24 @@
 % Options for packages loaded elsewhere
-% Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 %
 \documentclass{tudelft}
-\usepackage{xcolor}
+
 \usepackage{amsmath,amssymb}
-\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math} % this also loads fontspec
+  \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \fi
 \usepackage{lmodern}
-\ifPDFTeX\else
-  % xetex/luatex font selection
+\ifPDFTeX\else  
+    % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -38,6 +36,9 @@
 }{% if KOMA class
   \KOMAoptions{parskip=half}}
 \makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 % Make \paragraph and \subparagraph free-standing
 \makeatletter
 \ifx\paragraph\undefined\else
@@ -63,7 +64,8 @@
 \makeatother
 
 
-\usepackage{longtable,booktabs,array}
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -88,20 +90,6 @@
 % Set default figure placement to htbp
 \def\fps@figure{htbp}
 \makeatother
-
-
-
-
-
-\setlength{\emergencystretch}{3em} % prevent overfull lines
-
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-
-
-
- 
-
 
 \makeatletter
 \@ifpackageloaded{float}{}{\usepackage{float}}
@@ -208,10 +196,10 @@ boxed title style={boxrule=0.0mm, fuzzy shadow={1pt}{-1pt}{0mm}{0.1mm}{gray}, ar
 
 %%%% --- end foldboxy preamble ----- %%%%%
 %%==== colors from yaml ===%
+\definecolor{TRQ-color1}{HTML}{b5e1a5}
+\definecolor{TRQ-color2}{HTML}{6CC24A}
 \definecolor{RQ-color1}{HTML}{ebfaeb}
-\definecolor{RQ-color2}{HTML}{2eb82e}
-\definecolor{TRQ-color1}{HTML}{adebad}
-\definecolor{TRQ-color2}{HTML}{2eb82e}
+\definecolor{RQ-color2}{HTML}{6CC24A}
 %=============%
 \newcounter{quartocalloutnteno}
 \newcommand{\quartocalloutnte}[1]{\refstepcounter{quartocalloutnteno}\label{#1}}
@@ -219,9 +207,11 @@ boxed title style={boxrule=0.0mm, fuzzy shadow={1pt}{-1pt}{0mm}{0.1mm}{gray}, ar
 \newcommand{\quartocallouttrq}[1]{\refstepcounter{quartocallouttrqno}\label{#1}}
 \newcounter{quartocalloutrqno}
 \newcommand{\quartocalloutrq}[1]{\refstepcounter{quartocalloutrqno}\label{#1}}
+
 \usepackage{bookmark}
+
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same}
+\urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
   pdftitle={TU Delft PhD Thesis Template},
   pdfauthor={Patrick Altmeyer},
@@ -237,6 +227,7 @@ boxed title style={boxrule=0.0mm, fuzzy shadow={1pt}{-1pt}{0mm}{0.1mm}{gray}, ar
 \title{TU Delft PhD Thesis Template}
 \author{Patrick Altmeyer}
 \date{}
+
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -283,7 +274,7 @@ TRQ \hyperref[trq:what]{2.1} is an example of the former; RQ
 \hyperref[rq:what]{2.2} is an example of the latter.
 
 \phantomsection\label{trq:what}
-\begin{fbxSimple}{TRQ}{❔ TRQ 2.1: }{What is a TRQ?}
+\begin{fbxSimple}{TRQ}{TRQ 2.1: }{What is a TRQ?}
 \phantomsection\label{trq:what}
 This is a Thesis Research Question, that you might want to use in the
 introduction of your thesis.
@@ -306,7 +297,7 @@ custom cross-references. This approach has certain limitations
 (Note~\ref{nte-custom}), but may be preferable if you like the default
 callouts.
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, opacityback=0, leftrule=.75mm, left=2mm, bottomrule=.15mm, toprule=.15mm, colback=white, rightrule=.15mm, arc=.35mm, breakable]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, opacityback=0, bottomrule=.15mm, arc=.35mm, breakable, colframe=quarto-callout-note-color-frame, rightrule=.15mm, colback=white, leftrule=.75mm, toprule=.15mm]
 \begin{minipage}[t]{5.5mm}
 \textcolor{quarto-callout-note-color}{\faInfo}
 \end{minipage}%
@@ -334,7 +325,7 @@ affect the title.
 
 TRQ~\ref{trq-what} is a Thesis Research Question.
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, leftrule=.75mm, left=2mm, bottomrule=.15mm, toprule=.15mm, colback=white, rightrule=.15mm, arc=.35mm, breakable]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, opacityback=0, bottomrule=.15mm, arc=.35mm, breakable, colframe=quarto-callout-tip-color-frame, rightrule=.15mm, colback=white, leftrule=.75mm, toprule=.15mm]
 \begin{minipage}[t]{5.5mm}
 \textcolor{quarto-callout-tip-color}{\faLightbulb}
 \end{minipage}%
@@ -353,7 +344,7 @@ introduction of your thesis. It can be cross-referenced using the custom
 
 RQ~\ref{rq-what} is a standard Research Question.
 
-\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, opacityback=0, leftrule=.75mm, left=2mm, bottomrule=.15mm, toprule=.15mm, colback=white, rightrule=.15mm, arc=.35mm, breakable]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, opacityback=0, bottomrule=.15mm, arc=.35mm, breakable, colframe=quarto-callout-tip-color-frame, rightrule=.15mm, colback=white, leftrule=.75mm, toprule=.15mm]
 \begin{minipage}[t]{5.5mm}
 \textcolor{quarto-callout-tip-color}{\faLightbulb}
 \end{minipage}%

@@ -30,12 +30,12 @@ contributes:
         classes:
           TRQ: 
             group: question
-            label: "❔ TRQ"
-            colors: [adebad, 2eb82e]
+            label: "TRQ"
+            colors: [b5e1a5, 6CC24A]
           RQ: 
             group: question
             label: "RQ"
-            colors: [ebfaeb, 2eb82e]
+            colors: [ebfaeb, 6CC24A]
     html:
       theme: [default, custom.scss]
       filters:
