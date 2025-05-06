@@ -31,11 +31,11 @@ contributes:
           TRQ: 
             group: question
             label: "TRQ"
-            colors: [b5e1a5, 6CC24A]
+            colors: [80cdbb, 009B77]
           RQ: 
             group: question
             label: "RQ"
-            colors: [ebfaeb, 6CC24A]
+            colors: [dff3ee, 009B77]
     html:
       theme: [default, custom.scss]
       filters:
