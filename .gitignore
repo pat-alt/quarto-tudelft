@@ -5,6 +5,7 @@
 
 template.html
 template-files/
+**_xref.json
 
 # User-specific files
 *.rsuser

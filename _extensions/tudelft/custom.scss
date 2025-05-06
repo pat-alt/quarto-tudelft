@@ -33,8 +33,16 @@ $yellow: #FFB81C;
 $green: #6CC24A;
 $forrestgreen: #009B77;
 $darkgrey: #5C5C5C;
+// General
 $presentation-heading-color: $blue;
 $link-color: darken($presentation-heading-color, 15%);
 $code-color: $orange;
 $dark-bg-code-color: lighten($code-color, 15%);
 $light-bg-code-color: darken($code-color, 15%);
+// Callouts
+// Callouts:
+$callout-color-note: $royalblue !default;
+$callout-color-tip: $green !default;
+$callout-color-caution: $yellow !default;
+$callout-color-warning: $red !default;
+$callout-color-important: $lightpurple !default;
