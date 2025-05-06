@@ -17,10 +17,24 @@ $logo-pos: 5% 102% !default;
 $logo-size: 10% !default;
 
 // Colors
+// Color codes sourced from https://www.tudelft.nl/en/tu-delft-corporate-design/components/colour
 $body-bg: #ffffff !default;
 $body-color: #000000 !default;
-$presentation-heading-color: #4AA3D2;
+$blue: #00A6D6;
+$darkblue: #0C2340;
+$turquoise: #00B8C8;
+$royalblue: #0076C2;
+$lightpurple: #6F1D77;
+$pink: #EF60A3;
+$burgundy: #A50034;
+$red: #E03C31;
+$orange: #EC6842;
+$yellow: #FFB81C;
+$green: #6CC24A;
+$forrestgreen: #009B77;
+$darkgrey: #5C5C5C;
+$presentation-heading-color: $blue;
 $link-color: darken($presentation-heading-color, 15%);
-$code-color: #EB7246;
+$code-color: $orange;
 $dark-bg-code-color: lighten($code-color, 15%);
 $light-bg-code-color: darken($code-color, 15%);
