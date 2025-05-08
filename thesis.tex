@@ -92,36 +92,6 @@
 \makeatother
 
 \makeatletter
-\@ifpackageloaded{float}{}{\usepackage{float}}
-\floatstyle{plain}
-\@ifundefined{c@chapter}{\newfloat{trqthm}{h}{lotrq}}{\newfloat{trqthm}{h}{lotrq}[chapter]}
-\floatname{trqthm}{TRQ}
-\newcommand*\listoftrqthms{\listof{trqthm}{List of TRQs}}
-\makeatother
-\makeatletter
-\@ifpackageloaded{float}{}{\usepackage{float}}
-\floatstyle{plain}
-\@ifundefined{c@chapter}{\newfloat{rq}{h}{lorq}}{\newfloat{rq}{h}{lorq}[chapter]}
-\floatname{rq}{RQ}
-\newcommand*\listofrqs{\listof{rq}{List of Research Questions}}
-\makeatother
-\makeatletter
-\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
-\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
-\definecolor{quarto-callout-color}{HTML}{909090}
-\definecolor{quarto-callout-note-color}{HTML}{0758E5}
-\definecolor{quarto-callout-important-color}{HTML}{CC1914}
-\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
-\definecolor{quarto-callout-tip-color}{HTML}{00A047}
-\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
-\definecolor{quarto-callout-color-frame}{HTML}{acacac}
-\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
-\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
-\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
-\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
-\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
-\makeatother
-\makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
 \ifdefined\contentsname
@@ -196,17 +166,13 @@ boxed title style={boxrule=0.0mm, fuzzy shadow={1pt}{-1pt}{0mm}{0.1mm}{gray}, ar
 
 %%%% --- end foldboxy preamble ----- %%%%%
 %%==== colors from yaml ===%
-\definecolor{RQ-color1}{HTML}{dff3ee}
-\definecolor{RQ-color2}{HTML}{009B77}
-\definecolor{TRQ-color1}{HTML}{80cdbb}
-\definecolor{TRQ-color2}{HTML}{009B77}
+\definecolor{RQ-color1}{HTML}{dff4fa}
+\definecolor{RQ-color2}{HTML}{00a6d6}
+\definecolor{TRQ-color1}{HTML}{80d2eb}
+\definecolor{TRQ-color2}{HTML}{00a6d6}
+\definecolor{Rec-color1}{HTML}{fff6e3}
+\definecolor{Rec-color2}{HTML}{ffb81c}
 %=============%
-\newcounter{quartocalloutnteno}
-\newcommand{\quartocalloutnte}[1]{\refstepcounter{quartocalloutnteno}\label{#1}}
-\newcounter{quartocallouttrqno}
-\newcommand{\quartocallouttrq}[1]{\refstepcounter{quartocallouttrqno}\label{#1}}
-\newcounter{quartocalloutrqno}
-\newcommand{\quartocalloutrq}[1]{\refstepcounter{quartocalloutrqno}\label{#1}}
 
 \usepackage{bookmark}
 
@@ -247,13 +213,7 @@ Quarto.
 
 \subsection{Custom Callouts}\label{custom-callouts}
 
-The template adds custom numbered blocks and custom cross-references
-that can be combined with standard callout blocks like
-Note~\ref{nte-custom}.
-
-\subsubsection{Custom Numbered Blocks}\label{custom-numbered-blocks}
-
-The recommended approach is to rely on the embedded
+The template adds custom numbered blocks using the embedded
 \href{https://github.com/ute/custom-numbered-blocks}{ute/custom-numbered-blocks}
 extension, which supports HTML and PDF with non-standard
 cross-references (i.e.~\texttt{\textbackslash{}ref\{\}} syntax). We
@@ -268,98 +228,38 @@ We provide two custom numbered blocks:
   \textbf{TRQ} for Thesis Research Questions
 \item
   \textbf{RQ} for Research Questions
+\item
+  \textbf{Rec} for Recommendations
 \end{enumerate}
 
-TRQ \hyperref[trq:what]{2.1} is an example of the former; RQ
-\hyperref[rq:what]{2.2} is an example of the latter.
+TRQ \hyperref[trq:what]{2.1} is an example of a Thesis Research
+Question; RQ \hyperref[rq:what]{2.1} is an example of a Research
+Questions; Rec. \hyperref[rec:what]{2.1} is an example of a
+recommendation.
 
 \phantomsection\label{trq:what}
-\begin{fbxSimple}{TRQ}{TRQ 2.1: }{What is a TRQ?}
+\begin{fbx}{TRQ}{Thesis Research Question 2.1: }{What is a TRQ?}
 \phantomsection\label{trq:what}
 This is a Thesis Research Question, that you might want to use in the
 introduction of your thesis.
 
-\end{fbxSimple}
+\end{fbx}
 
 \phantomsection\label{rq:what}
-\begin{fbxSimple}{RQ}{RQ 2.2: }{What is a RQ?}
+\begin{fbx}{RQ}{Research Question 2.1: }{What is a RQ?}
 \phantomsection\label{rq:what}
 This is a Research Question, that you might want to use in any chapter
 of your thesis.
 
-\end{fbxSimple}
+\end{fbx}
 
-\subsubsection{Callouts with Custom
-Cross-References}\label{callouts-with-custom-cross-references}
+\phantomsection\label{rec:what}
+\begin{fbx}{Rec}{Recommendation 2.1: }{What is a Rec?}
+\phantomsection\label{rec:what}
+This is a Recommendation that you might want to use in the conclusion of
+your thesis.
 
-Alternatively, you can rely on standard callout blocks combined with
-custom cross-references. This approach has certain limitations
-(Note~\ref{nte-custom}), but may be preferable if you like the default
-callouts.
-
-\begin{tcolorbox}[enhanced jigsaw, breakable, bottomrule=.15mm, opacityback=0, left=2mm, colback=white, colframe=quarto-callout-note-color-frame, rightrule=.15mm, arc=.35mm, toprule=.15mm, leftrule=.75mm]
-\begin{minipage}[t]{5.5mm}
-\textcolor{quarto-callout-note-color}{\faInfo}
-\end{minipage}%
-\begin{minipage}[t]{\textwidth - 5.5mm}
-
-\quartocalloutnte{nte-custom} 
-
-\vspace{-3mm}\textbf{Note \ref*{nte-custom}: Current Limitations}\vspace{3mm}
-
-This is a makeshift solution surprisingly works, but it has certain
-limitations. Firstly, it relies on setting the default behaviour of
-callout blocks to \texttt{callout-appearance:\ simple} (to override
-this, just use the YAML header of you document or the
-\texttt{\_quarto.yml} config file). We rely on the default style of
-callout blocks, e.g.~the \texttt{.callout-tip} for questions, where the
-light bulb icon sort of makes sense. Secondly, it works well for PDF, in
-that the title in the callout block is changed to TRQ/RQ, but not for
-HTML. We use
-\href{https://quarto.thecoatlessprofessor.com/custom-callout/qcustom-callout-faq.html}{coatless-quarto/custom-callouts}
-to add a custom icon in HTML, but unfortunately we have not been able to
-affect the title.
-
-\end{minipage}%
-\end{tcolorbox}
-
-TRQ~\ref{trq-what} is a Thesis Research Question.
-
-\begin{tcolorbox}[enhanced jigsaw, breakable, bottomrule=.15mm, opacityback=0, left=2mm, colback=white, colframe=quarto-callout-tip-color-frame, rightrule=.15mm, arc=.35mm, toprule=.15mm, leftrule=.75mm]
-\begin{minipage}[t]{5.5mm}
-\textcolor{quarto-callout-tip-color}{\faLightbulb}
-\end{minipage}%
-\begin{minipage}[t]{\textwidth - 5.5mm}
-
-\quartocallouttrq{trq-what} 
-
-\vspace{-3mm}\textbf{TRQ \ref*{trq-what}: What are Thesis Research Questions?}\vspace{3mm}
-
-This is a Thesis Research Question, that you might want to use in the
-introduction of your thesis. It can be cross-referenced using the custom
-\texttt{trq} key.
-
-\end{minipage}%
-\end{tcolorbox}
-
-RQ~\ref{rq-what} is a standard Research Question.
-
-\begin{tcolorbox}[enhanced jigsaw, breakable, bottomrule=.15mm, opacityback=0, left=2mm, colback=white, colframe=quarto-callout-tip-color-frame, rightrule=.15mm, arc=.35mm, toprule=.15mm, leftrule=.75mm]
-\begin{minipage}[t]{5.5mm}
-\textcolor{quarto-callout-tip-color}{\faLightbulb}
-\end{minipage}%
-\begin{minipage}[t]{\textwidth - 5.5mm}
-
-\quartocalloutrq{rq-what} 
-
-\vspace{-3mm}\textbf{RQ \ref*{rq-what}: What are Research Questions?}\vspace{3mm}
-
-This is a standard Research Question, that you might want to use in any
-individual chapter. It can be cross-referenced using the custom
-\texttt{rq} key.
-
-\end{minipage}%
-\end{tcolorbox}
+\end{fbx}
 
 
 
