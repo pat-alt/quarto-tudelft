@@ -1,0 +1,165 @@
+% !TeX spellcheck = en_GB
+\begin{titlepage}
+
+    \begin{center}
+
+        %% Extra whitespace at the top.
+        \vspace*{2\bigskipamount}
+
+        %% Print the title.
+        {\makeatletter
+            \titlestyle\bfseries\LARGE\@title
+            \makeatother}
+
+        %% Print the optional subtitle.
+        {\makeatletter
+            \ifx\@subtitle\undefined\else
+                \bigskip
+                \titlefont\titleshape\Large\@subtitle
+            \fi
+            \makeatother}
+
+    \end{center}
+
+    \cleardoublepage
+    \thispagestyle{empty}
+
+    \begin{center}
+
+        %% The following lines repeat the previous page exactly.
+
+        \vspace*{2\bigskipamount}
+
+        %% Print the title.
+        {\makeatletter
+            \titlestyle\bfseries\LARGE\@title
+            \makeatother}
+
+        %% Print the optional subtitle.
+        {\makeatletter
+            \ifx\@subtitle\undefined\else
+                \bigskip
+                \titlefont\titleshape\Large\@subtitle
+            \fi
+            \makeatother}
+
+        %% Uncomment the following lines to insert a vertically centered picture into
+        %% the title page.
+        %\vfill
+        %\includegraphics{title}
+        \vfill
+
+        %% Apart from the names and dates, the following text is dictated by the
+        %% promotieregelement.
+
+        {\Large\titlefont\bfseries Dissertation}
+
+        \bigskip
+        \bigskip
+
+        for the purpose of obtaining the degree of doctor
+
+        at Delft University of Technology
+
+        by the authority of the Rector Magnificus, prof.~dr.~ir.~T.H.J.J.~van der Hagen,
+
+        chair of the Board for Doctorates
+
+        to be defended publicly on
+
+            [date= weekday (word) day (number), month (word) year (number)] at [hh:mm (number)] o'clock
+
+        \bigskip
+        \bigskip
+
+        by
+
+        \bigskip
+        \bigskip
+
+        %% Print the full name of the author.
+        \makeatletter
+        % {\Large\titlefont\bfseries\@firstnames\ \MakeUppercase{\titleshape\@lastname}}
+        \makeatother
+
+        \bigskip
+        \bigskip
+
+        [highest academic title, name university, country]
+
+        born in [town/city, country of birth]
+
+        %% Extra whitespace at the bottom.
+        \vspace*{2\bigskipamount}
+
+    \end{center}
+
+    \clearpage
+    \thispagestyle{empty}
+
+    %% The following line is dictated by the promotieregelement.
+    \noindent This dissertation has been approved by the promotors.
+
+    \bigskip
+    \noindent Composition of the doctoral committee:
+    %% List the committee members, starting with the Rector Magnificus and the
+    %% promotor(s) and ending with the reserve members.
+    \begin{tabbing}
+        \hspace{\tabcolsep}\=\hspace{0.33\textwidth}\=\hspace{0.66\textwidth}                   \\[-3\medskipamount]
+        \> Rector Magnificus,          \> chairperson\\
+        \> Prof.\ dr.\ A.\ Kleiner,    \> Delft University of Technology, \textit{promotor}      \\
+        \> Dr.\ A.A.\ Aaronson,        \> Delft University of Technology, \textit{copromotor}    \\[\medskipamount]
+        \>\textit{Independent members:}                                                        \\[\smallskipamount]
+        \>Prof.\ dr.\ A.\ Jansen       \> Delft University of Technology                         \\
+        % Special case, only for very long names
+        \>Prof.\ dr.\ ir.\ A.B.C.D.\ van de Lange-Achternaam                                    \\
+        \>                             \> Delft University of Technology                         \\
+        \>Prof.\ dr.\ N.\ Nescio       \> Politecnico di Milano, Italy                       \\
+        \>Prof.\ dr.\ ir.\ J.\ Doe,    \> Delft University of Technology, reserve member             \\[\medskipamount]
+        \>\textit{Other members:}                                                               \\[\smallskipamount]
+        \>Prof.\ dr.\ ir.\ J.\ de Wit, \> Delft University of Technology                         \\
+        \>Dr.\ ir.\ Q.\ de Zwart,      \> Delft University of Technology\\
+    \end{tabbing}
+
+    %% Include the following disclaimer for committee members who have contributed
+    %% to this dissertation. Its formulation is again dictated by the
+    %% promotieregelement.
+    \medskip
+    \noindent Prof.\ dr.\ ir.\ J.\ de Wit of Delft University of Technology has contributed greatly to the preparation of this dissertation.
+
+    %% Here you can include the logos of any institute that contributed financially
+    %% to this dissertation.
+    \vfill
+    \begin{center}
+        % \includegraphics[height=0.5in]{/www/TUDelft_logo_rgb.png}
+    \end{center}
+    \vfill
+
+    \noindent
+    \begin{tabular}{@{}p{0.2\textwidth}@{}p{0.8\textwidth}@{}}
+        \textit{Keywords:}    & \ldots                                                                                        \\[\medskipamount]
+        \textit{Printed by:}   & Johannes Gutenberg                                                                            \\[\medskipamount]
+        \textit{Cover by:} & Beautiful cover art that captures the entire content of this thesis in a single illustration.
+    \end{tabular}
+
+    \vspace{4\bigskipamount}
+
+    \noindent Copyright \textcopyright{} \the\year{} by{
+        \makeatletter
+        % \@initials~\@lastname
+        \makeatother
+    }
+
+    %% Uncomment the following lines if this dissertation is part of the Casimir PhD
+    %% Series, or a similar research school.
+    %\medskip
+    %\noindent Casimir PhD Series, Delft-Leiden 2015-01
+
+    \medskip
+    \noindent ISBN 000-00-0000-000-0
+
+    \medskip
+    \noindent An electronic copy of this dissertation is available at\\
+    \url{https://repository.tudelft.nl/}.
+
+\end{titlepage}

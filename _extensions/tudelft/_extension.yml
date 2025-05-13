@@ -37,3 +37,4 @@ contributes:
         - color-tudelft.sty
       template-partials:
         - partials/doc-class.tex
+        - partials/before-body.tex
