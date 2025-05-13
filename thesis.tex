@@ -166,12 +166,12 @@ boxed title style={boxrule=0.0mm, fuzzy shadow={1pt}{-1pt}{0mm}{0.1mm}{gray}, ar
 
 %%%% --- end foldboxy preamble ----- %%%%%
 %%==== colors from yaml ===%
-\definecolor{Rec-color1}{HTML}{fff6e3}
-\definecolor{Rec-color2}{HTML}{ffb81c}
-\definecolor{TRQ-color1}{HTML}{80d2eb}
-\definecolor{TRQ-color2}{HTML}{00a6d6}
 \definecolor{RQ-color1}{HTML}{dff4fa}
 \definecolor{RQ-color2}{HTML}{00a6d6}
+\definecolor{TRQ-color1}{HTML}{80d2eb}
+\definecolor{TRQ-color2}{HTML}{00a6d6}
+\definecolor{Rec-color1}{HTML}{fff6e3}
+\definecolor{Rec-color2}{HTML}{ffb81c}
 %=============%
 
 \usepackage{bookmark}
@@ -195,6 +195,7 @@ boxed title style={boxrule=0.0mm, fuzzy shadow={1pt}{-1pt}{0mm}{0.1mm}{gray}, ar
 \date{}
 
 \begin{document}
+% Adapted with the help of Claude Sonnet 3.7
 % !TeX spellcheck = en_GB
 \begin{titlepage}
 
@@ -264,7 +265,7 @@ boxed title style={boxrule=0.0mm, fuzzy shadow={1pt}{-1pt}{0mm}{0.1mm}{gray}, ar
 
         to be defended publicly on
 
-            [date= weekday (word) day (number), month (word) year (number)] at [hh:mm (number)] o'clock
+        [date= weekday (word) day (number), month (word) year (number)] at [hh:mm (number)] o'clock
 
         \bigskip
         \bigskip
@@ -275,10 +276,8 @@ boxed title style={boxrule=0.0mm, fuzzy shadow={1pt}{-1pt}{0mm}{0.1mm}{gray}, ar
         \bigskip
 
         %% Print the full name of the author.
-        \makeatletter
-        % {\Large\titlefont\bfseries\@firstnames\ \MakeUppercase{\titleshape\@lastname}}
-        \makeatother
-
+        {\Large\titlefont\bfseries Patrick Altmeyer}
+        
         \bigskip
         \bigskip
 
@@ -304,53 +303,40 @@ boxed title style={boxrule=0.0mm, fuzzy shadow={1pt}{-1pt}{0mm}{0.1mm}{gray}, ar
     \begin{tabbing}
         \hspace{\tabcolsep}\=\hspace{0.33\textwidth}\=\hspace{0.66\textwidth}                   \\[-3\medskipamount]
         \> Rector Magnificus,          \> chairperson\\
-        \> Prof.\ dr.\ A.\ Kleiner,    \> Delft University of Technology, \textit{promotor}      \\
-        \> Dr.\ A.A.\ Aaronson,        \> Delft University of Technology, \textit{copromotor}    \\[\medskipamount]
-        \>\textit{Independent members:}                                                        \\[\smallskipamount]
-        \>Prof.\ dr.\ A.\ Jansen       \> Delft University of Technology                         \\
-        % Special case, only for very long names
-        \>Prof.\ dr.\ ir.\ A.B.C.D.\ van de Lange-Achternaam                                    \\
-        \>                             \> Delft University of Technology                         \\
-        \>Prof.\ dr.\ N.\ Nescio       \> Politecnico di Milano, Italy                       \\
-        \>Prof.\ dr.\ ir.\ J.\ Doe,    \> Delft University of Technology, reserve member             \\[\medskipamount]
-        \>\textit{Other members:}                                                               \\[\smallskipamount]
-        \>Prof.\ dr.\ ir.\ J.\ de Wit, \> Delft University of Technology                         \\
-        \>Dr.\ ir.\ Q.\ de Zwart,      \> Delft University of Technology\\
     \end{tabbing}
 
     %% Include the following disclaimer for committee members who have contributed
     %% to this dissertation. Its formulation is again dictated by the
     %% promotieregelement.
-    \medskip
-    \noindent Prof.\ dr.\ ir.\ J.\ de Wit of Delft University of Technology has contributed greatly to the preparation of this dissertation.
+
+    %% Here you can include the logos of any institute that contributed financially
+    %% to this dissertation.
+    \vfill
+        \begin{center}
+                                \includegraphics[height=1in]{\_extensions/tudelft/www/tudelft.png}\hspace{1cm}
+                        \end{center}
+    \vfill
 
     %% Here you can include the logos of any institute that contributed financially
     %% to this dissertation.
     \vfill
     \begin{center}
-        % \includegraphics[height=0.5in]{/www/TUDelft_logo_rgb.png}
     \end{center}
     \vfill
 
     \noindent
     \begin{tabular}{@{}p{0.2\textwidth}@{}p{0.8\textwidth}@{}}
-        \textit{Keywords:}    & \ldots                                                                                        \\[\medskipamount]
+        \textit{Keywords:}    & templatedemo                                                                                        \\[\medskipamount]
         \textit{Printed by:}   & Johannes Gutenberg                                                                            \\[\medskipamount]
         \textit{Cover by:} & Beautiful cover art that captures the entire content of this thesis in a single illustration.
     \end{tabular}
 
     \vspace{4\bigskipamount}
 
-    \noindent Copyright \textcopyright{} \the\year{} by{
-        \makeatletter
-        % \@initials~\@lastname
-        \makeatother
-    }
+    \noindent Copyright \textcopyright{} \the\year{} by Patrick Altmeyer
 
     %% Uncomment the following lines if this dissertation is part of the Casimir PhD
     %% Series, or a similar research school.
-    %\medskip
-    %\noindent Casimir PhD Series, Delft-Leiden 2015-01
 
     \medskip
     \noindent ISBN 000-00-0000-000-0

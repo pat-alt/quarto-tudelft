@@ -1,3 +1,4 @@
+% Adapted with the help of Claude Sonnet 3.7
 % !TeX spellcheck = en_GB
 \begin{titlepage}
 
@@ -61,13 +62,13 @@
 
         at Delft University of Technology
 
-        by the authority of the Rector Magnificus, prof.~dr.~ir.~T.H.J.J.~van der Hagen,
+        by the authority of the Rector Magnificus, $if(rector)$$rector$$else$prof.~dr.~ir.~T.H.J.J.~van der Hagen$endif$,
 
         chair of the Board for Doctorates
 
         to be defended publicly on
 
-            [date= weekday (word) day (number), month (word) year (number)] at [hh:mm (number)] o'clock
+        $if(defense-date)$$defense-date$$else$[date= weekday (word) day (number), month (word) year (number)] at [hh:mm (number)] o'clock$endif$
 
         \bigskip
         \bigskip
@@ -78,16 +79,14 @@
         \bigskip
 
         %% Print the full name of the author.
-        \makeatletter
-        % {\Large\titlefont\bfseries\@firstnames\ \MakeUppercase{\titleshape\@lastname}}
-        \makeatother
-
+        $if(author)${\Large\titlefont\bfseries $author$}$else$\author{$for(authors)$$it.name.literal$$sep$ \and $endfor$}$endif$
+        
         \bigskip
         \bigskip
 
-        [highest academic title, name university, country]
+        $if(author-degree)$$author-degree$$else$[highest academic title, name university, country]$endif$
 
-        born in [town/city, country of birth]
+        born in $if(author-birthplace)$$author-birthplace$$else$[town/city, country of birth]$endif$
 
         %% Extra whitespace at the bottom.
         \vspace*{2\bigskipamount}
@@ -107,59 +106,83 @@
     \begin{tabbing}
         \hspace{\tabcolsep}\=\hspace{0.33\textwidth}\=\hspace{0.66\textwidth}                   \\[-3\medskipamount]
         \> Rector Magnificus,          \> chairperson\\
-        \> Prof.\ dr.\ A.\ Kleiner,    \> Delft University of Technology, \textit{promotor}      \\
-        \> Dr.\ A.A.\ Aaronson,        \> Delft University of Technology, \textit{copromotor}    \\[\medskipamount]
+$for(committee)$
+        \> $committee.title$,    \> $committee.affiliation$$if(committee.role)$, \textit{$committee.role$}$endif$    \\
+$endfor$
+$if(independent-members)$
         \>\textit{Independent members:}                                                        \\[\smallskipamount]
-        \>Prof.\ dr.\ A.\ Jansen       \> Delft University of Technology                         \\
-        % Special case, only for very long names
-        \>Prof.\ dr.\ ir.\ A.B.C.D.\ van de Lange-Achternaam                                    \\
-        \>                             \> Delft University of Technology                         \\
-        \>Prof.\ dr.\ N.\ Nescio       \> Politecnico di Milano, Italy                       \\
-        \>Prof.\ dr.\ ir.\ J.\ Doe,    \> Delft University of Technology, reserve member             \\[\medskipamount]
+$for(independent-members)$
+        \>$independent-members.title$$if(independent-members.name-too-long)$\\
+        \>$endif$       \> $independent-members.affiliation$$if(independent-members.role)$, $independent-members.role$$endif$                         \\
+$endfor$
+$endif$
+$if(other-members)$
         \>\textit{Other members:}                                                               \\[\smallskipamount]
-        \>Prof.\ dr.\ ir.\ J.\ de Wit, \> Delft University of Technology                         \\
-        \>Dr.\ ir.\ Q.\ de Zwart,      \> Delft University of Technology\\
+$for(other-members)$
+        \>$other-members.title$, \> $other-members.affiliation$                         \\
+$endfor$
+$endif$
     \end{tabbing}
 
     %% Include the following disclaimer for committee members who have contributed
     %% to this dissertation. Its formulation is again dictated by the
     %% promotieregelement.
+$if(contributors)$
     \medskip
-    \noindent Prof.\ dr.\ ir.\ J.\ de Wit of Delft University of Technology has contributed greatly to the preparation of this dissertation.
+$for(contributors)$
+    \noindent $contributors.title$ of $contributors.affiliation$ has contributed greatly to the preparation of this dissertation.
+$endfor$
+$endif$
+
+    %% Here you can include the logos of any institute that contributed financially
+    %% to this dissertation.
+    \vfill
+        \begin{center}
+        $if(institute-logos)$
+        $for(institute-logos)$
+                \includegraphics[height=1in]{$institute-logos.path$}$if(institute-logos.spacing)$\hspace{$institute-logos.spacing$}$else$\hspace{1cm}$endif$
+        $endfor$
+        $else$
+        $if(institute-logo)$
+                \includegraphics[height=1in]{$institute-logo$}
+        $endif$
+        $endif$
+        \end{center}
+    \vfill
 
     %% Here you can include the logos of any institute that contributed financially
     %% to this dissertation.
     \vfill
     \begin{center}
-        % \includegraphics[height=0.5in]{/www/TUDelft_logo_rgb.png}
+$if(institute-logo)$
+        \includegraphics[height=0.5in]{$institute-logo$}
+$endif$
     \end{center}
     \vfill
 
     \noindent
     \begin{tabular}{@{}p{0.2\textwidth}@{}p{0.8\textwidth}@{}}
-        \textit{Keywords:}    & \ldots                                                                                        \\[\medskipamount]
-        \textit{Printed by:}   & Johannes Gutenberg                                                                            \\[\medskipamount]
-        \textit{Cover by:} & Beautiful cover art that captures the entire content of this thesis in a single illustration.
+        \textit{Keywords:}    & $if(keywords)$$keywords$$else$\ldots$endif$                                                                                        \\[\medskipamount]
+        \textit{Printed by:}   & $if(printed-by)$$printed-by$$else$Johannes Gutenberg$endif$                                                                            \\[\medskipamount]
+        \textit{Cover by:} & $if(cover-by)$$cover-by$$else$Beautiful cover art that captures the entire content of this thesis in a single illustration.$endif$
     \end{tabular}
 
     \vspace{4\bigskipamount}
 
-    \noindent Copyright \textcopyright{} \the\year{} by{
-        \makeatletter
-        % \@initials~\@lastname
-        \makeatother
-    }
+    \noindent Copyright \textcopyright{} $if(copyright-year)$$copyright-year$$else$\the\year{}$endif$ by $if(author)$$author$$endif$
 
     %% Uncomment the following lines if this dissertation is part of the Casimir PhD
     %% Series, or a similar research school.
-    %\medskip
-    %\noindent Casimir PhD Series, Delft-Leiden 2015-01
+$if(phd-series)$
+    \medskip
+    \noindent $phd-series$
+$endif$
 
     \medskip
-    \noindent ISBN 000-00-0000-000-0
+    \noindent ISBN $if(isbn)$$isbn$$else$000-00-0000-000-0$endif$
 
     \medskip
     \noindent An electronic copy of this dissertation is available at\\
-    \url{https://repository.tudelft.nl/}.
+    \url{$if(repository-url)$$repository-url$$else$https://repository.tudelft.nl/$endif$}.
 
 \end{titlepage}
