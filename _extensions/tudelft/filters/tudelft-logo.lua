@@ -5,9 +5,7 @@ function Meta(meta)
 	-- Check if the TU Delft logo should be included (default: true)
 	if meta["institute-logo-tudelft"] == nil or meta["institute-logo-tudelft"] then
 		-- Get the path to the extension's directory
-		local extension_path = "_extensions/tudelft"
-		local tudelft_logo_path = extension_path .. "/www/tudelft.png"
-
+		local tudelft_logo_path = "www/tudelft.png"
 		-- If no logos are specified, create a new list with just the TU Delft logo
 		if meta["institute-logos"] == nil then
 			-- Check if a single logo is specified

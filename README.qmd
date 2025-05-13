@@ -1,0 +1,8 @@
+---
+format: 
+  commonmark:
+    variant: -raw_html+tex_math_dollars
+    wrap: none
+---
+
+{{< include _guide.qmd >}}

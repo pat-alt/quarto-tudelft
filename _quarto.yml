@@ -1,2 +1,4 @@
 project: 
   output-dir: docs
+
+bibliography: bibliography.bib

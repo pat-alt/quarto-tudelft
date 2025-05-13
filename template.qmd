@@ -21,9 +21,4 @@ format:
     fig-align: center
 draft: true
 ---
-
-## 🥜 In a nutshell ... 
-
-- Blah blah
-
-# New Section
+{{< include _guide.qmd >}}
