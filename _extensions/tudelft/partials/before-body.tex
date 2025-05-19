@@ -198,3 +198,24 @@ $endif$
     \url{$if(repository-url)$$repository-url$$else$https://repository.tudelft.nl/$endif$}.
 
 \end{titlepage}
+
+%% The (optional) dedication can be used to thank someone or display a
+%% significant quotation.
+$if(dedication)$
+\dedication{
+$if(dedication.text)$
+  \epigraph{$dedication.text$}{$dedication.author$}
+$else$
+  $for(dedication)$
+    \epigraph{$dedication.text$}{$dedication.author$}
+  $endfor$
+$endif$
+}
+$endif$
+
+{
+  \cleardoublepage%
+  \phantomsection%
+  \pdfbookmark[1]{\contentsname}{toc}
+  \tableofcontents
+}
