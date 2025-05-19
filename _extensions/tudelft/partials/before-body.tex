@@ -134,17 +134,22 @@ $for(contributors)$
 $endfor$
 $endif$
 
+$if(institute-message)$
+    \medskip
+    \noindent $institute-message$
+$endif$
+
     %% Here you can include the logos of any institute that contributed financially
     %% to this dissertation.
     \vfill
         \begin{center}
         $if(institute-logos)$
         $for(institute-logos)$
-                \includegraphics[height=1in]{$institute-logos.path$}$if(institute-logos.spacing)$\hspace{$institute-logos.spacing$}$else$\hspace{1cm}$endif$
+                \includegraphics[height=0.75in]{$institute-logos.path$}$if(institute-logos.spacing)$\hspace{$institute-logos.spacing$}$else$\hspace{1cm}$endif$
         $endfor$
         $else$
         $if(institute-logo)$
-                \includegraphics[height=1in]{$institute-logo$}
+                \includegraphics[height=0.75in]{$institute-logo$}
         $endif$
         $endif$
         \end{center}
@@ -162,21 +167,24 @@ $endif$
 
     \noindent
     \begin{tabular}{@{}p{0.2\textwidth}@{}p{0.8\textwidth}@{}}
-        \textit{Keywords:}    & $if(keywords)$$keywords$$else$\ldots$endif$                                                                                        \\[\medskipamount]
-        \textit{Printed by:}   & $if(printed-by)$$printed-by$$else$Johannes Gutenberg$endif$                                                                            \\[\medskipamount]
+        \textit{Keywords:}    & $if(keywords)$$for(keywords)$$it$$sep$, $endfor$$else$\ldots$endif$ \\[\medskipamount]
+        \textit{Printed by:}   & $if(printed-by)$$printed-by$$else$Johannes Gutenberg$endif$ \\[\medskipamount]
         \textit{Cover by:} & $if(cover-by)$$cover-by$$else$Beautiful cover art that captures the entire content of this thesis in a single illustration.$endif$
     \end{tabular}
 
     \vspace{4\bigskipamount}
 
+$if(copyright-year)$
     \noindent Copyright \textcopyright{} $if(copyright-year)$$copyright-year$$else$\the\year{}$endif$ by $if(author)$$author$$endif$
+$endif$
 
-    %% Uncomment the following lines if this dissertation is part of the Casimir PhD
-    %% Series, or a similar research school.
 $if(phd-series)$
     \medskip
     \noindent $phd-series$
 $endif$
+
+    \medskip
+    \noindent The author set this thesis using Quarto: \url{https://github.com/quarto-tudelft}.
 
     \medskip
     \noindent ISBN $if(isbn)$$isbn$$else$000-00-0000-000-0$endif$

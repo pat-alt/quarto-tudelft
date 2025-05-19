@@ -168,10 +168,10 @@ boxed title style={boxrule=0.0mm, fuzzy shadow={1pt}{-1pt}{0mm}{0.1mm}{gray}, ar
 %%==== colors from yaml ===%
 \definecolor{TRQ-color1}{HTML}{80d2eb}
 \definecolor{TRQ-color2}{HTML}{00a6d6}
-\definecolor{RQ-color1}{HTML}{dff4fa}
-\definecolor{RQ-color2}{HTML}{00a6d6}
 \definecolor{Rec-color1}{HTML}{fff6e3}
 \definecolor{Rec-color2}{HTML}{ffb81c}
+\definecolor{RQ-color1}{HTML}{dff4fa}
+\definecolor{RQ-color2}{HTML}{00a6d6}
 %=============%
 
 \usepackage{bookmark}
@@ -309,11 +309,16 @@ boxed title style={boxrule=0.0mm, fuzzy shadow={1pt}{-1pt}{0mm}{0.1mm}{gray}, ar
     %% to this dissertation. Its formulation is again dictated by the
     %% promotieregelement.
 
+    \medskip
+    \noindent This is an optional message to acknowledge partner
+institutes.
+
     %% Here you can include the logos of any institute that contributed financially
     %% to this dissertation.
     \vfill
         \begin{center}
-                                \includegraphics[height=1in]{www/tudelft.png}\hspace{1cm}
+                                \includegraphics[height=0.75in]{www/tudelft.png}\hspace{1.5cm}
+                        \includegraphics[height=0.75in]{www/delft-final.png}\hspace{1cm}
                         \end{center}
     \vfill
 
@@ -326,17 +331,17 @@ boxed title style={boxrule=0.0mm, fuzzy shadow={1pt}{-1pt}{0mm}{0.1mm}{gray}, ar
 
     \noindent
     \begin{tabular}{@{}p{0.2\textwidth}@{}p{0.8\textwidth}@{}}
-        \textit{Keywords:}    & templatedemo                                                                                        \\[\medskipamount]
-        \textit{Printed by:}   & Johannes Gutenberg                                                                            \\[\medskipamount]
+        \textit{Keywords:}    & template, demo \\[\medskipamount]
+        \textit{Printed by:}   & Johannes Gutenberg \\[\medskipamount]
         \textit{Cover by:} & Beautiful cover art that captures the entire content of this thesis in a single illustration.
     \end{tabular}
 
     \vspace{4\bigskipamount}
 
-    \noindent Copyright \textcopyright{} \the\year{} by Patrick Altmeyer
 
-    %% Uncomment the following lines if this dissertation is part of the Casimir PhD
-    %% Series, or a similar research school.
+
+    \medskip
+    \noindent The author set this thesis using Quarto: \url{https://github.com/quarto-tudelft}.
 
     \medskip
     \noindent ISBN 000-00-0000-000-0
