@@ -166,12 +166,12 @@ boxed title style={boxrule=0.0mm, fuzzy shadow={1pt}{-1pt}{0mm}{0.1mm}{gray}, ar
 
 %%%% --- end foldboxy preamble ----- %%%%%
 %%==== colors from yaml ===%
-\definecolor{TRQ-color1}{HTML}{80d2eb}
-\definecolor{TRQ-color2}{HTML}{00a6d6}
-\definecolor{Rec-color1}{HTML}{fff6e3}
-\definecolor{Rec-color2}{HTML}{ffb81c}
 \definecolor{RQ-color1}{HTML}{dff4fa}
 \definecolor{RQ-color2}{HTML}{00a6d6}
+\definecolor{Rec-color1}{HTML}{fff6e3}
+\definecolor{Rec-color2}{HTML}{ffb81c}
+\definecolor{TRQ-color1}{HTML}{80d2eb}
+\definecolor{TRQ-color2}{HTML}{00a6d6}
 %=============%
 
 \usepackage{bookmark}
@@ -197,6 +197,10 @@ boxed title style={boxrule=0.0mm, fuzzy shadow={1pt}{-1pt}{0mm}{0.1mm}{gray}, ar
 \begin{document}
 % Adapted with the help of Claude Sonnet 3.7
 % !TeX spellcheck = en_GB
+
+% Apply frontmatter styling (Roman numerals for the page numbers of the title pages and toc)
+\frontmatter
+
 \begin{titlepage}
 
     \begin{center}
@@ -353,6 +357,24 @@ institutes.
 \end{titlepage}
 \floatname{algorithm}{Algorithm}
 
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{3}
+\tableofcontents
+}
+
+\section*{Preface}\label{preface}
+\addcontentsline{toc}{section}{Preface}
+
+\section*{Summary}\label{summary}
+\addcontentsline{toc}{section}{Summary}
+
+\section*{Samenvatting}\label{samenvatting}
+\addcontentsline{toc}{section}{Samenvatting}
+
+\pagebreak
+\mainmatter
 
 \section{Introduction}\label{introduction}
 

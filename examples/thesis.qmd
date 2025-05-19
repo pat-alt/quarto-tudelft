@@ -15,11 +15,21 @@ author:
 abstract: |
   This document is a template demonstrating the `thesis-tudelft` format.
 keywords: [template, demo]
+toc: true
 
 institute-message: "This is an optional message to acknowledge partner institutes."
 institute-logos:
   - path: "www/delft-final.png"
 ---
+
+# Preface {.unnumbered}
+
+# Summary {.unnumbered}
+
+# Samenvatting {.unnumbered}
+
+\pagebreak
+\mainmatter
 
 # Introduction
 
