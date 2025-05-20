@@ -83,12 +83,23 @@
         \bigskip
 
         %% Print the full name of the author.
-        $if(author)${\Large\titlefont\bfseries $author$}$else$\author{$for(authors)$$it.name.literal$$sep$ \and $endfor$}$endif$
-        
+        $if(author)$
+            \newcommand{\formatname}[2]{#1 \MakeUppercase{#2}} % First Last -> First LAST
+            \StrBefore{$author$}{ }[\FirstName]
+            \StrBehind{$author$}{ }[\LastName]
+            {\Large\titlefont\bfseries \formatname{\FirstName}{\LastName}}
+        $else$
+            \author{$for(authors)$$it.name.literal$$sep$ \and $endfor$}
+        $endif$
+
         \bigskip
         \bigskip
 
-        $if(author-degree)$$author-degree$$else$[highest academic title, name university, country]$endif$
+        $if(author-degree)$
+        $author-degree$
+        $else$
+        [highest academic title, name university, country]
+        $endif$
 
         born in $if(author-birthplace)$$author-birthplace$$else$[town/city, country of birth]$endif$
 
@@ -110,9 +121,12 @@
     \begin{tabbing}
         \hspace{\tabcolsep}\=\hspace{0.33\textwidth}\=\hspace{0.66\textwidth}                   \\[-3\medskipamount]
         \> Rector Magnificus,          \> chairperson\\
+
 $for(committee)$
-        \> $committee.title$,    \> $committee.affiliation$$if(committee.role)$, \textit{$committee.role$}$endif$    \\
+        \>$committee.title$$if(committee.name-too-long)$\\
+        \>$endif$       \> $committee.affiliation$$if(committee.role)$, $committee.role$$endif$                         \\
 $endfor$
+
 $if(independent-members)$
         \>\textit{Independent members:}                                                        \\[\smallskipamount]
 $for(independent-members)$

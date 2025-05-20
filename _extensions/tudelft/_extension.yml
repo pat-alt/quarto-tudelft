@@ -39,6 +39,8 @@ contributes:
       template-partials:
         - partials/doc-class.tex
         - partials/before-body.tex
+      include-in-header:
+        - include-in-header.tex
       filters:
         - filters/tudelft-logo.lua
       institute-logo-tudelft: true

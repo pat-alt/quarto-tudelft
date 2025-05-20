@@ -91,6 +91,7 @@
 \def\fps@figure{htbp}
 \makeatother
 
+\usepackage{xstring}
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
@@ -166,10 +167,10 @@ boxed title style={boxrule=0.0mm, fuzzy shadow={1pt}{-1pt}{0mm}{0.1mm}{gray}, ar
 
 %%%% --- end foldboxy preamble ----- %%%%%
 %%==== colors from yaml ===%
-\definecolor{TRQ-color1}{HTML}{80d2eb}
-\definecolor{TRQ-color2}{HTML}{00a6d6}
 \definecolor{RQ-color1}{HTML}{dff4fa}
 \definecolor{RQ-color2}{HTML}{00a6d6}
+\definecolor{TRQ-color1}{HTML}{80d2eb}
+\definecolor{TRQ-color2}{HTML}{00a6d6}
 \definecolor{Rec-color1}{HTML}{fff6e3}
 \definecolor{Rec-color2}{HTML}{ffb81c}
 %=============%
@@ -181,7 +182,7 @@ boxed title style={boxrule=0.0mm, fuzzy shadow={1pt}{-1pt}{0mm}{0.1mm}{gray}, ar
 \hypersetup{
   pdftitle={TU Delft PhD Thesis Template},
   pdfauthor={Patrick Altmeyer},
-  pdfkeywords={template, demo},
+  pdfkeywords={Quarto, Extension, Template},
   colorlinks=true,
   linkcolor={blue},
   filecolor={Maroon},
@@ -269,7 +270,7 @@ boxed title style={boxrule=0.0mm, fuzzy shadow={1pt}{-1pt}{0mm}{0.1mm}{gray}, ar
 
         to be defended publicly on
 
-        [date= weekday (word) day (number), month (word) year (number)] at [hh:mm (number)] o'clock
+        Tuesday 20, June 2025 at 10:00 o'clock
 
         \bigskip
         \bigskip
@@ -280,14 +281,17 @@ boxed title style={boxrule=0.0mm, fuzzy shadow={1pt}{-1pt}{0mm}{0.1mm}{gray}, ar
         \bigskip
 
         %% Print the full name of the author.
-        {\Large\titlefont\bfseries Patrick Altmeyer}
+                    \newcommand{\formatname}[2]{#1 \MakeUppercase{#2}} % First Last -> First LAST
+            \StrBefore{Patrick Altmeyer}{ }[\FirstName]
+            \StrBehind{Patrick Altmeyer}{ }[\LastName]
+            {\Large\titlefont\bfseries \formatname{\FirstName}{\LastName}}
         
         \bigskip
         \bigskip
 
-        [highest academic title, name university, country]
-
-        born in [town/city, country of birth]
+                MSc Research, University of Research, Country
+        
+        born in Amsterdam, The Netherlands
 
         %% Extra whitespace at the bottom.
         \vspace*{2\bigskipamount}
@@ -307,6 +311,30 @@ boxed title style={boxrule=0.0mm, fuzzy shadow={1pt}{-1pt}{0mm}{0.1mm}{gray}, ar
     \begin{tabbing}
         \hspace{\tabcolsep}\=\hspace{0.33\textwidth}\=\hspace{0.66\textwidth}                   \\[-3\medskipamount]
         \> Rector Magnificus,          \> chairperson\\
+
+        \>Prof.~dr. A. Kleiner       \> Delft University of
+Technology, promotor                         \\
+        \>Dr.~A.A. Aaronson       \> Delft University of
+Technology, copromotor                         \\
+        \>Prof.~dr. ir. A.B.C.D. van de Lange-Achternaam\\
+        \>       \> Delft University of
+Technology                         \\
+
+        \>\textit{Independent members:}                                                        \\[\smallskipamount]
+        \>Prof.~dr. A. Jansen       \> Delft University of
+Technology                         \\
+        \>Prof.~dr. ir. A.B.C.D. van de Andere Lange-Achternaam\\
+        \>       \> Delft University of
+Technology                         \\
+        \>Prof.~dr. N. Nescio       \> Politecnico di Milano,
+Italy                         \\
+        \>Prof.~dr. ir. J. Doe       \> Delft University of
+Technology, reserve member                         \\
+        \>\textit{Other members:}                                                               \\[\smallskipamount]
+        \>Prof.~dr. ir. J. de Wit, \> Delft University of
+Technology                         \\
+        \>Dr.~ir. Q. de Zwart, \> Delft University of
+Technology                         \\
     \end{tabbing}
 
     %% Include the following disclaimer for committee members who have contributed
@@ -335,7 +363,7 @@ institutes.
 
     \noindent
     \begin{tabular}{@{}p{0.2\textwidth}@{}p{0.8\textwidth}@{}}
-        \textit{Keywords:}    & template, demo \\[\medskipamount]
+        \textit{Keywords:}    & Quarto, Extension, Template \\[\medskipamount]
         \textit{Printed by:}   & Johannes Gutenberg \\[\medskipamount]
         \textit{Cover by:} & Beautiful cover art that captures the entire content of this thesis in a single illustration.
     \end{tabular}
